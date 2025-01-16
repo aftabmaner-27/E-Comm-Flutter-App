@@ -1,7 +1,9 @@
+import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class TDeviceUtils {
   static void hidekeyboard(BuildContext context) {
@@ -15,12 +17,16 @@ class TDeviceUtils {
   }
 
   static bool isLandscapeOrientation(BuildContext context) {
-    final viewInsets = View.of(context).viewInsets;
+    final viewInsets = View
+        .of(context)
+        .viewInsets;
     return viewInsets.bottom == 0;
   }
 
   static bool isPortraitOrientation(BuildContext context) {
-    final viewInsets = View.of(context).viewInsets;
+    final viewInsets = View
+        .of(context)
+        .viewInsets;
     return viewInsets.bottom != 0;
   }
 
@@ -30,19 +36,30 @@ class TDeviceUtils {
   }
 
   static double getScreenHeight() {
-    return MediaQuery.of(Get.context!).size.height;
+    return MediaQuery
+        .of(Get.context!)
+        .size
+        .height;
   }
 
   static double getScreenWidth(BuildContext context) {
-    return MediaQuery.of(context).size.width;
+    return MediaQuery
+        .of(context)
+        .size
+        .width;
   }
 
   static double getPixelRatio() {
-    return MediaQuery.of(Get.context!).devicePixelRatio;
+    return MediaQuery
+        .of(Get.context!)
+        .devicePixelRatio;
   }
 
   static double getStatusBarHeight() {
-    return MediaQuery.of(Get.context!).padding.top;
+    return MediaQuery
+        .of(Get.context!)
+        .padding
+        .top;
   }
 
   static double getBottomnavigationBarHeight() {
@@ -54,12 +71,16 @@ class TDeviceUtils {
   }
 
   static double getKeyBoardHeight() {
-    final viewInsets = MediaQuery.of(Get.context!).viewInsets;
+    final viewInsets = MediaQuery
+        .of(Get.context!)
+        .viewInsets;
     return viewInsets.bottom;
   }
 
   static Future<bool> isKeyBoardVisible() async {
-    final viewInsets = View.of(Get.context!).viewInsets;
+    final viewInsets = View
+        .of(Get.context!)
+        .viewInsets;
     return viewInsets.bottom > 0;
   }
 
@@ -86,4 +107,31 @@ class TDeviceUtils {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
         overlays: SystemUiOverlay.values);
   }
+
+  static Future<bool> hasInternetConnection() async {
+    try {
+      final result = await InternetAddress.lookup('example.com');
+      return result.isNotEmpty && result[0].rawAddress.isNotEmpty;
+    }
+    on SocketException
+    catch(_) {
+    return false;
+    }
+  }
+
+  static bool isIOS(){
+    return Platform.isIOS;
+  }
+  static bool isAndroid(){
+    return Platform.isAndroid;
+  }
+
+  static void launchuUrl(String url) async {
+    if(await canLaunchUrlString(url)){
+      await launchUrlString(url);
+    }else{
+      throw 'Could not launch $url';
+    }
+  }
+
 }
