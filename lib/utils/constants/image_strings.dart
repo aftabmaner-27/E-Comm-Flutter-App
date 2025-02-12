@@ -6,4 +6,9 @@ class TImages {
   //Soacil Logos
   static const String google = "assets/logos/";
   static const String facebook = "assets/logos/";
+
+  static const String OnBoardingImage1 ="assets/images/on_boarding_images/onboard_deliverimg.png";
+  static const String OnBoardingImage2 ="assets/images/on_boarding_images/onboard_search.jpg";
+  static const String OnBoardingImage3 ="assets/images/on_boarding_images/onboard_shoping.jpg";
+
 }

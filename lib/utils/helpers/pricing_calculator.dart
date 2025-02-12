@@ -13,7 +13,7 @@ class TPricingCalculator {
 
   ///-- Calculates shipping cost
 
-  static double calculateShippingCost(double productPrice, String location) {
+  static String calculateShippingCost(double productPrice, String location) {
     double shippingCost = getShippingCost(location);
     return shippingCost.toStringAsFixed(2);
   }
