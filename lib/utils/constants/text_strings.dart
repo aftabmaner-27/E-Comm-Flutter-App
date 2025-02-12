@@ -16,4 +16,24 @@ class TTexts {
   //home
   static const String homeAppBarTitle = "Good Day for Shopping";
   static const String homeAppBarSubTitle = "Aftab Maner";
+
+  //Authentication form text
+  static const String firstName = "First Name";
+  static const String lastName = "Last Name";
+  static const String email = "E-Mail";
+  static const String password = "Password";
+  static const String newPassword = "New Password";
+  static const String userName = "User Name";
+  static const String phoneNumber = "Phone Number";
+  static const String rememberMe = "Remember Me";
+  static const String forgetPassword = "Forget Password";
+  static const String signIn = "Sign In";
+  static const String createAccount = "Create Account";
+  static const String orSignInWith = "Or Sign In With";
+
+
+
+  //Authentication heading text
+  static const String loginTitle = "Welcome back";
+  static const String loginSubTitle = "Discover Limitless Choices and Unmatched Convenience.";
 }
