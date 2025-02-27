@@ -30,10 +30,15 @@ class TTexts {
   static const String signIn = "Sign In";
   static const String createAccount = "Create Account";
   static const String orSignInWith = "Or Sign In With";
+  static const String orSignUpWith = "Or Sign Up With";
 
-
+  static const String iAgreeTo = "I agree to";
+  static const String and = "and";
+  static const String privacyPolicy = "Privacy Policy";
+  static const String termsOfUse = "Terms Of Use";
 
   //Authentication heading text
   static const String loginTitle = "Welcome back";
   static const String loginSubTitle = "Discover Limitless Choices and Unmatched Convenience.";
+  static const String signupTitle = "Let's Create Your Account";
 }
