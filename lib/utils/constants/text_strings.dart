@@ -41,4 +41,18 @@ class TTexts {
   static const String loginTitle = "Welcome back";
   static const String loginSubTitle = "Discover Limitless Choices and Unmatched Convenience.";
   static const String signupTitle = "Let's Create Your Account";
+
+  static const String confirmEmail = "Verify your email address!";
+  static const String tContinue = "Continue";
+  static const String submit = "Submit";
+  static const String ResetPassword = "Reset Password";
+  static const String resendEamil = "Resend Email";
+  static const String AccountCreatedSuccessfully = "Your account successfully created!";
+  static const String AccountSubTiletCreatedSuccessfully = "Welcome to your ultimate shopping Destination your account is created unleash the joy of seamless online shopping!";
+
+  static const String confirmEmailSubTilte = "Congratulations! your account Awaits verify your email to start shopping and experience a world of unrivialed details and persionalized offers.";
+
+  static const String forgetPassTitle = "Forget Password";
+  static const String forgetSubPassTitle = "Don’t worry! It happens. Let’s reset your password. Enter your email to receive password reset instructions. We’ll send you a link to reset it.";
+
 }

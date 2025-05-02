@@ -11,12 +11,17 @@ class LoginHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dark = THelperFunction.isDarkMode(context);
+    final screenSize = MediaQuery.of(context).size;
+    final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
+
+
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.end,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Image(
-          height: 70,
-          image: AssetImage(dark ? TImages.lightAppLogo : TImages.lightAppLogo),
+          width: screenSize.width * 0.5,
+          height: screenSize.width * 0.5,
+          image: AssetImage(dark ? TImages.defalutAppLogo : TImages.defalutAppLogo),
         ),
         const SizedBox(height: TSizes.sm),
         Text(
