@@ -5,6 +5,7 @@ import 'package:e_com_app/utils/theme/custom_theme/text_field_theme.dart';
 import 'package:e_com_app/utils/theme/custom_theme/text_theme.dart';
 import 'package:flutter/material.dart';
 
+import '../constants/colors.dart';
 import 'custom_theme/appbar_theme.dart';
 import 'custom_theme/bottom_sheet_theme.dart';
 import 'custom_theme/chip_theme.dart';
@@ -16,7 +17,7 @@ class TAppTheme {
     useMaterial3: true,
     fontFamily: 'Poppins',
     brightness: Brightness.light,
-    primaryColor: Colors.purple.shade900,
+    primaryColor: TColors.primary,
     scaffoldBackgroundColor: Colors.white,
     textTheme: TTextTheme.lightTextTheme,
     chipTheme: TChipTheme.lightchipTheme,
@@ -31,7 +32,7 @@ class TAppTheme {
     useMaterial3: true,
     fontFamily: 'Poppins',
     brightness: Brightness.dark,
-    primaryColor: Colors.purple.shade900,
+    primaryColor: TColors.primary,
     scaffoldBackgroundColor: Colors.black,
     textTheme: TTextTheme.darkTextTheme,
     chipTheme: TChipTheme.darkchipTheme,

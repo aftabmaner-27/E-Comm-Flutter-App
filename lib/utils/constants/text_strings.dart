@@ -45,7 +45,10 @@ class TTexts {
   static const String confirmEmail = "Verify your email address!";
   static const String tContinue = "Continue";
   static const String submit = "Submit";
+  static const String done = "Done";
   static const String ResetPassword = "Reset Password";
+  static const String ResetPasswordEamilSend = "Password Reset Email Sent";
+  static const String subTitleResetPasswordEamilSend = "Your password reset email has been sent. Please check your inbox and follow the instructions to reset your password.";
   static const String resendEamil = "Resend Email";
   static const String AccountCreatedSuccessfully = "Your account successfully created!";
   static const String AccountSubTiletCreatedSuccessfully = "Welcome to your ultimate shopping Destination your account is created unleash the joy of seamless online shopping!";

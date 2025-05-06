@@ -1,9 +1,12 @@
+import 'package:e_com_app/utils/helpers/helper_functions.dart';
+import 'package:flutter/cupertino.dart'; // For CupertinoIcons
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
+import '../../../../utils/constants/image_strings.dart';
 import '../../../../utils/constants/sizes.dart';
 import '../../../../utils/constants/text_strings.dart';
+
 
 class ResetPassword extends StatelessWidget {
   const ResetPassword({super.key});
@@ -11,47 +14,66 @@ class ResetPassword extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Reset Password',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-            const SizedBox(height: 16.0),
-            Text(
-              'Please enter your new password.',
-              style: Theme.of(context).textTheme.bodyMedium,
-            ),
-            const SizedBox(height: 32.0),
-            TextFormField(
-              decoration: InputDecoration(
-                labelText: 'New Password',
-                prefixIcon: Icon(Icons.lock),
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        actions: [
+          IconButton(
+            onPressed: () => Get.back(),
+            icon: const Icon(CupertinoIcons.clear),
+          ),
+        ],
+      ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(TSizes.defaultSpace),
+          child: Column(
+            children: [
+              /// Image
+              Image(
+                image: AssetImage(TImages.email_verify),
+                width: THelperFunction.screenWidth() * 0.6,
               ),
-              obscureText: true,
-            ),
-            const SizedBox(height: 16.0),
-            TextFormField(
-              decoration: InputDecoration(
-                labelText: 'Confirm Password',
-                prefixIcon: Icon(Icons.lock),
-              ),
-              obscureText: true,
-            ),
+              const SizedBox(height: TSizes.spaceBtwSections),
 
-            const SizedBox(height: TSizes.spaceBtwItems * 2),
-            SizedBox(
+              /// Headings
+
+              Text(TTexts.ResetPasswordEamilSend,
+                  style: Theme.of(context).textTheme.headlineMedium,
+                  textAlign: TextAlign.center),
+              SizedBox(height: TSizes.spaceBtwItems),
+              Text( TTexts.subTitleResetPasswordEamilSend,
+                  style: Theme.of(context).textTheme.labelMedium,
+                  textAlign: TextAlign.center),
+              SizedBox(height: TSizes.spaceBtwSections),
+
+              /// Text Field
+              //  TextFormField(
+              //   decoration: InputDecoration(
+              //     labelText: TTexts.newPassword,
+              //   ),
+              // ),
+              // const SizedBox(height: TSizes.spaceBtwItems * 2),
+
+              /// Submit Button
+              SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                    onPressed: () => Get.off(() => const ResetPassword()),
-                    child: const Text(TTexts.ResetPassword))),
-          ],
+                  onPressed: () => Get.back(),
+                  child: const Text(TTexts.done),
+                ),
+              ),
+              const SizedBox(height: TSizes.spaceBtwItems),
+              SizedBox(
+                width: double.infinity,
+                child: TextButton(
+                  onPressed: () => Get.back(),
+                  child: const Text(TTexts.resendEamil),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
 }
-
